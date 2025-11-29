@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public interface ITake
+public interface IDraggable
 {
-    void Enter();
+    void OnGrab();
 
     void UpdateMove(Vector3 target);
 
-    void Exit();
+    void OnRealese();
 }

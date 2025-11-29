@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Take : MonoBehaviour, ITake
+public class Draggable : MonoBehaviour, IDraggable
 {
     [SerializeField] private Rigidbody _rigidbody;
 
@@ -16,14 +16,14 @@ public class Take : MonoBehaviour, ITake
         _rigidbody.MovePosition(_currentTarget);
     }
 
-    public void Enter()
+    public void OnGrab()
     {
         _currentTarget = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         _rigidbody.useGravity = false;
         _isTake = true;
     }
 
-    public void Exit()
+    public void OnRealese()
     {
         _rigidbody.useGravity = true;
         _isTake = false;
